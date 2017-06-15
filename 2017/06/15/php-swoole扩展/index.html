@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/6 | 陈康</title>
+  <title>php swoole扩展 | 陈康</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="陈康">
-<meta property="og:url" content="http://yiguitao.com/archives/2017/06/index.html">
+  <meta name="description" content="#swoole 安装学习 安装包：?sudo git clone https://github.com/swoole/swoole-src.git swoole 使用：可一步请求数据库 代码数据库使用可看swoole官网：http://www.swoole.com/ 编译生成configure文件 一 ： 通过phpize脚本生成cd swoole-src.gitsudo /usr/bin/php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php swoole扩展">
+<meta property="og:url" content="http://yiguitao.com/2017/06/15/php-swoole扩展/index.html">
 <meta property="og:site_name" content="陈康">
+<meta property="og:description" content="#swoole 安装学习 安装包：?sudo git clone https://github.com/swoole/swoole-src.git swoole 使用：可一步请求数据库 代码数据库使用可看swoole官网：http://www.swoole.com/ 编译生成configure文件 一 ： 通过phpize脚本生成cd swoole-src.gitsudo /usr/bin/php">
+<meta property="og:updated_time" content="2017-06-15T10:28:07.176Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈康">
+<meta name="twitter:title" content="php swoole扩展">
+<meta name="twitter:description" content="#swoole 安装学习 安装包：?sudo git clone https://github.com/swoole/swoole-src.git swoole 使用：可一步请求数据库 代码数据库使用可看swoole官网：http://www.swoole.com/ 编译生成configure文件 一 ： 通过phpize脚本生成cd swoole-src.gitsudo /usr/bin/php">
   
     <link rel="alternate" href="/atom.xml" title="陈康" type="application/atom+xml">
   
@@ -59,77 +63,60 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/15/php-swoole扩展/" class="archive-article-date">
-  <time datetime="2017-06-15T10:22:56.000Z" itemprop="datePublished">Jun 15</time>
+        <section id="main"><article id="post-php-swoole扩展" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/15/php-swoole扩展/" class="article-date">
+  <time datetime="2017-06-15T10:22:56.000Z" itemprop="datePublished">2017-06-15</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/php-swoole扩展/">php swoole扩展</a>
+    <h1 class="article-title" itemprop="name">
+      php swoole扩展
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/15/laravel/" class="archive-article-date">
-  <time datetime="2017-06-15T09:44:12.000Z" itemprop="datePublished">Jun 15</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/laravel/">laravel</a>
-    </h1>
-  
+        <p>#swoole 安装学习</p>
+<p>安装包：?sudo git clone <a href="https://github.com/swoole/swoole-src.git" target="_blank" rel="external">https://github.com/swoole/swoole-src.git</a></p>
+<p>swoole 使用：可一步请求数据库 代码数据库使用可看swoole官网：<br><a href="http://www.swoole.com/" target="_blank" rel="external">http://www.swoole.com/</a></p>
+<p>编译生成configure文件</p>
+<p>一 ： 通过phpize脚本生成<br>cd swoole-src.git<br>sudo /usr/bin/phpize7.0</p>
+<p>如果没有找到phpize 先安装phpize</p>
+<p>sudo apt-get install autoconf automake libtool m4<br>sudo apt-get install php7.0-dev<br>For PHP7.1, use php7.1-dev<br>二 ： 通过configure生成makefile 文件<br>sudo ./configure<br>三 ：通过 makefile 文件编译生成 .so文件</p>
+<p>sudo make<br>sudo make test  //可选<br>sudo make install<br>四 ：配置 .ini<br>cd /etc/php/7.0/mods-available/<br>touch swoole.ini<br>extension=swoole.so<br>sudo ln -s /etc/php/7.0/mods-available/swoole.ini/etc/php/7.0/cli/conf.d/swoole.ini<br>sudo ln -s /etc/php/7.0/mods-available/swoole.ini/etc/php/7.0/fpm/conf.d/swoole.ini<br>//fpm模式下需要重启fpm，phpinfo 查看<br>sudo service php7.0-fpm restart<br>php -m | grep swoole<br>通过Cmake安装</p>
+<p>把swoole.so做为一个C库</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/15/git上传流程命令/" class="archive-article-date">
-  <time datetime="2017-06-15T05:36:52.000Z" itemprop="datePublished">Jun 15</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/git上传流程命令/">git上传流程命令</a>
-    </h1>
-  
-
-    </header>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yiguitao.com/2017/06/15/php-swoole扩展/" data-id="cj3ya88p10004ooowx6moq5wn" class="article-share-link">Partager</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/15/laravel/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">laravel</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
