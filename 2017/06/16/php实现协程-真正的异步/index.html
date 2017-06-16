@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>git基本命令 | 陈康</title>
+  <title>php实现协程 真正的异步 | 陈康</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git常用命令 ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key git config –global user.name “Your Name”      你名 git config –global user.email “email@example.com”  你邮箱（随意） git clone ssh路径 连接远程（默认在桌面）">
-<meta name="keywords" content="git">
+  <meta name="description" content="php协程  主要函数 yield （异步：不会阻断事务的进行,程序会继续走下去）   通过composer先安装 composer require recoil/recoil   swoole协程代码：1234567891011121314151617181920212223&amp;lt;?php require &amp;apos;ok.php&amp;apos;;$i = 10000;$c = new Corou">
+<meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git基本命令">
-<meta property="og:url" content="http://yiguitao.com/2017/06/15/git上传流程命令/index.html">
+<meta property="og:title" content="php实现协程 真正的异步">
+<meta property="og:url" content="http://yiguitao.com/2017/06/16/php实现协程-真正的异步/index.html">
 <meta property="og:site_name" content="陈康">
-<meta property="og:description" content="git常用命令 ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key git config –global user.name “Your Name”      你名 git config –global user.email “email@example.com”  你邮箱（随意） git clone ssh路径 连接远程（默认在桌面）">
-<meta property="og:updated_time" content="2017-06-16T09:07:51.097Z">
+<meta property="og:description" content="php协程  主要函数 yield （异步：不会阻断事务的进行,程序会继续走下去）   通过composer先安装 composer require recoil/recoil   swoole协程代码：1234567891011121314151617181920212223&amp;lt;?php require &amp;apos;ok.php&amp;apos;;$i = 10000;$c = new Corou">
+<meta property="og:updated_time" content="2017-06-16T08:40:53.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git基本命令">
-<meta name="twitter:description" content="git常用命令 ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key git config –global user.name “Your Name”      你名 git config –global user.email “email@example.com”  你邮箱（随意） git clone ssh路径 连接远程（默认在桌面）">
+<meta name="twitter:title" content="php实现协程 真正的异步">
+<meta name="twitter:description" content="php协程  主要函数 yield （异步：不会阻断事务的进行,程序会继续走下去）   通过composer先安装 composer require recoil/recoil   swoole协程代码：1234567891011121314151617181920212223&amp;lt;?php require &amp;apos;ok.php&amp;apos;;$i = 10000;$c = new Corou">
   
     <link rel="alternate" href="/atom.xml" title="陈康" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-git上传流程命令" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-php实现协程-真正的异步" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/15/git上传流程命令/" class="article-date">
-  <time datetime="2017-06-15T05:36:52.000Z" itemprop="datePublished">2017-06-15</time>
+    <a href="/2017/06/16/php实现协程-真正的异步/" class="article-date">
+  <time datetime="2017-06-16T08:21:31.000Z" itemprop="datePublished">2017-06-16</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      git基本命令
+      php实现协程 真正的异步
     </h1>
   
 
@@ -87,15 +87,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h3><p> ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key<br> git config –global user.name “Your Name”      你名<br> git config –global user.email “email@example.com”  你邮箱（随意）<br> git clone ssh路径 连接远程（默认在桌面）<br> git流程<br> git status  查看状态<br> git add .文件名  准备上传的文件<br> git reset 文件名  撤销准备上传的文件<br> git commit -m ‘add 文件名’  上传文件到本地仓库<br> git commit -am ‘edit b.php’<br> git log  查看日志<br> git push origin master:master  上传文件到远程仓库<br> git push origin 本地分支名：远程仓库分支名  把整个分支上传到远程分支<br> git pull  下载文件到本地仓库<br> git diff  查看冲突</p>
+        <h2 id="php协程-主要函数-yield"><a href="#php协程-主要函数-yield" class="headerlink" title="php协程  主要函数 yield"></a>php协程  主要函数 yield</h2><p> （异步：不会阻断事务的进行,程序会继续走下去）<br>   通过composer先安装 composer require recoil/recoil<br>   <a href="http://www.yiguitao.com/2017/06/15/php-swoole%E6%89%A9%E5%B1%95/" target="_blank" rel="external">swoole</a>协程<br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"> require &apos;ok.php&apos;;</div><div class="line"></div><div class="line">$i = 10000;</div><div class="line"></div><div class="line">$c = new Coroutine();</div><div class="line">$c-&gt;start(task1());</div><div class="line">$c-&gt;start(task2());</div><div class="line"></div><div class="line">function task1()&#123;</div><div class="line">    global $i;</div><div class="line">    echo &quot;wait start&quot; . PHP_EOL;</div><div class="line">    while ($i-- &gt; 0) &#123;</div><div class="line">        yield;</div><div class="line">    &#125;</div><div class="line">    echo &quot;wait end&quot; . PHP_EOL;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function task2()&#123;</div><div class="line">    echo &quot;Hello &quot; . PHP_EOL;</div><div class="line">    yield;</div><div class="line">    echo &quot;world!&quot; . PHP_EOL;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yiguitao.com/2017/06/15/git上传流程命令/" data-id="cj3zmwzk80000c4owjm9irxag" class="article-share-link">Share</a>
+      <a data-url="http://yiguitao.com/2017/06/16/php实现协程-真正的异步/" data-id="cj3zmwzkk0003c4owmja9m9go" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
 
     </footer>
   </div>
@@ -103,15 +103,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/06/15/laravel/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          laravel
-        
-      </div>
-    </a>
   
+    <a href="/2017/06/16/编程故事卡/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">编程故事卡</div>
+    </a>
   
 </nav>
 

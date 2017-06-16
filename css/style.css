@@ -308,7 +308,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 300px;
+  height: 350px;
   position: relative;
   border-bottom: 1px solid #ddd;
 }
@@ -354,11 +354,23 @@ body {
   background-size: cover;
   z-index: -1;
 }
+#img {
+  position: absolute;
+  top: 10%;
+  left: 43%;
+  width: 13%;
+  height: 60%;
+  background: url("images/img.jpg") center #000;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  z-index: 0;
+}
 #header-title {
   text-align: center;
   height: 40px;
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 0;
   margin-top: -20px;
 }
@@ -370,6 +382,7 @@ body {
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 #logo {
+  color: #000;
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 2px;
