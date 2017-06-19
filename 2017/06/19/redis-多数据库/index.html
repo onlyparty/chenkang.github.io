@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yiguitao.com/2017/06/19/redis-多数据库/index.html">
 <meta property="og:site_name" content="陈康">
 <meta property="og:description" content="redis 多数据库 目的： 让程序数据彼此分开同时又存储在相同的实例 理解： redis下，数据库是由一个整数索引标识，而不是由一个数据库名称。默认情况下，一个客户端连接到数据库0        一个redis实例下默认有16个数据库，默认从0开始,每个数据库都有属于自己的空间，不必担心之间的key冲突。 操作： 可以随意操作 切还库        1redis&amp;gt; select 2 用mo">
-<meta property="og:updated_time" content="2017-06-19T02:57:30.521Z">
+<meta property="og:updated_time" content="2017-06-19T03:09:36.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis">
 <meta name="twitter:description" content="redis 多数据库 目的： 让程序数据彼此分开同时又存储在相同的实例 理解： redis下，数据库是由一个整数索引标识，而不是由一个数据库名称。默认情况下，一个客户端连接到数据库0        一个redis实例下默认有16个数据库，默认从0开始,每个数据库都有属于自己的空间，不必担心之间的key冲突。 操作： 可以随意操作 切还库        1redis&amp;gt; select 2 用mo">
@@ -56,7 +56,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yiguitao.com"></form>
@@ -90,13 +90,13 @@
         <h2 id="redis-多数据库"><a href="#redis-多数据库" class="headerlink" title="redis 多数据库"></a>redis 多数据库</h2><p> 目的： 让程序数据彼此分开同时又存储在相同的实例<br> 理解： redis下，数据库是由一个整数索引标识，而不是由一个数据库名称。默认情况下，一个客户端连接到数据库0<br>        一个redis实例下默认有16个数据库，默认从0开始,每个数据库都有属于自己的空间，不必担心之间的key冲突。<br> 操作： 可以随意操作 切还库<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis&gt; select 2</div></pre></td></tr></table></figure></p>
 <pre><code>用move 命令 可以将键值 从1库迁入 2库
 </code></pre><p>扩展： 一个redis默认是16个数据库，也可以配置更多，当然16个库足够用了,<br>       配置如下：<br>       修改redis.conf下的databases指令：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">databases 64</div></pre></td></tr></table></figure></p>
-<h2 id="redis-事务"><a href="#redis-事务" class="headerlink" title="redis 事务"></a>redis 事务</h2><p>  事务表示的是一组动作，这组动作要么全部执行，要么全部不执行.<br>  redis 需要用到两个命令 MULTI（开启事务） exec (执行事务) DISCARD（取消事务）<br> 执行事务：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">redis&gt; MULTI ()</div><div class="line">OK</div><div class="line">redis&gt; SET a &quot;hellowCK&quot;</div><div class="line">QUEUED</div><div class="line">redis&gt; DISCARD</div></pre></td></tr></table></figure></p>
-<p> 取消事务：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">redis&gt; MULTI ()</div><div class="line">OK</div><div class="line">redis&gt; SET a &quot;hellowCK&quot;</div><div class="line">QUEUED</div><div class="line">redis&gt; DISCARD</div></pre></td></tr></table></figure></p>
+<h2 id="redis-事务"><a href="#redis-事务" class="headerlink" title="redis 事务"></a>redis 事务</h2><p>  事务表示的是一组动作，这组动作要么全部执行，要么全部不执行.<br>  redis 需要用到两个命令 MULTI（开启事务） exec (执行事务) DISCARD（取消事务）<br> 执行事务：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">redis&gt; MULTI ()</div><div class="line">OK</div><div class="line">redis&gt; SET a &quot;hello&quot;</div><div class="line">QUEUED</div><div class="line">redis&gt; DISCARD</div></pre></td></tr></table></figure></p>
+<p> 取消事务：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">redis&gt; MULTI ()</div><div class="line">OK</div><div class="line">redis&gt; SET a &quot;hello&quot;</div><div class="line">QUEUED</div><div class="line">redis&gt; DISCARD</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yiguitao.com/2017/06/19/redis-多数据库/" data-id="cj43k7fxy00090cowep295izc" class="article-share-link">Share</a>
+      <a data-url="http://yiguitao.com/2017/06/19/redis-多数据库/" data-id="cj43kbqjj00050cowwat4my0h" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
@@ -109,7 +109,7 @@
   
   
     <a href="/2017/06/16/php单元测试-契约测试/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">php单元测试 契约测试</div>
     </a>
   
@@ -139,7 +139,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
@@ -149,7 +149,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
