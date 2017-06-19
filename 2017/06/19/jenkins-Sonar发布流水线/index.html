@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jenkins+Sonar发布流水线 | 陈康</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##Sonar  开发语言:Java Ruby 查看源码»  操作系统:跨平台  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。  点击查看Sonar安装和使用   ##Jenkins  1,安装：从官网下载安装文件后，直接运行即可;  2,变更支持：Jenkins能从代码仓库（Sv">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jenkins+Sonar发布流水线">
+<meta property="og:url" content="http://yiguitao.com/2017/06/19/jenkins-Sonar发布流水线/index.html">
+<meta property="og:site_name" content="陈康">
+<meta property="og:description" content="##Sonar  开发语言:Java Ruby 查看源码»  操作系统:跨平台  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。  点击查看Sonar安装和使用   ##Jenkins  1,安装：从官网下载安装文件后，直接运行即可;  2,变更支持：Jenkins能从代码仓库（Sv">
+<meta property="og:updated_time" content="2017-06-19T08:01:11.249Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jenkins+Sonar发布流水线">
+<meta name="twitter:description" content="##Sonar  开发语言:Java Ruby 查看源码»  操作系统:跨平台  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。  点击查看Sonar安装和使用   ##Jenkins  1,安装：从官网下载安装文件后，直接运行即可;  2,变更支持：Jenkins能从代码仓库（Sv">
+  
+    <link rel="alternate" href="/atom.xml" title="陈康" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="img"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">陈康</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yiguitao.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jenkins-Sonar发布流水线" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/19/jenkins-Sonar发布流水线/" class="article-date">
+  <time datetime="2017-06-19T07:34:11.000Z" itemprop="datePublished">2017-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jenkins+Sonar发布流水线
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  ##Sonar<br>  开发语言:Java Ruby <a href="https://github.com/SonarSource/sonarqube" target="_blank" rel="external">查看源码»</a><br>  操作系统:跨平台<br>  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。<br>  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。<br>  <a href="https://www.ibm.com/developerworks/cn/java/j-lo-sonar/" target="_blank" rel="external">点击查看Sonar安装和使用</a></p>
+<p>  ##Jenkins<br>  1,安装：从官网下载安装文件后，直接运行即可;<br>  2,变更支持：Jenkins能从代码仓库（Svn/Git）中获取并产生代码更新列表并显示到流水线信息中;<br>  3,JUnit/TestNG图表等形式提供详细的测试报表功能;<br>  4,Jenkins支持分布式构建;<br>  5,Jenkins 还支持第三方插件(所以可以和Sonar一块使用);</p>
+<h4 id="部署Jenkins服务"><a href="#部署Jenkins服务" class="headerlink" title="部署Jenkins服务"></a>部署Jenkins服务</h4><pre><code>安装环境介绍
+安装 Jenkins
+新建 /opt/soft/jenkins 目录
+[jenkins](https://jenkins.io/download/) 官网下载 war 包
+将 jenkins.war 拷贝到此目录下
+初始化运行，执行以下命令，默认以管理员身份启动运行
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd /opt/soft/jenkins;</div><div class="line">export JAVA_HOME=/opt/jdk1.8.0_51;</div><div class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH;</div><div class="line">export JENKINS_HOME=/opt/soft/jenkins/workdir/;</div><div class="line">java -jar /opt/soft/jenkins/jenkins.war --httpPort=80</div></pre></td></tr></table></figure>
+
+在浏览器里输入 192.168.0.1，可以进入 Jenkins
+配置 Jenkins
+从左侧面板的“系统管理”按钮进入配置管理页面
+首先点击“管理插件”页面，在“高级”Tab页上传必要的插件，包括Git、Gitlab Auth、Role-Based Authorization等
+然后进入“Configure Global Security”页面，勾选“启用安全”，安全域里选择Gitlab登录，并添加相关信息
+在“Configure Global Security”页面的安全域“权限”中选择“Role-Based Strategy”，然后到“Manage and Assign Roles”页面配置项目角色和权限
+域名映射
+启动时，设置 --httpPort=80，再由网管指定域名 http://yiguitao.com 映射即可
+集成Gitlab登录后，用户登录时会跳转到Gitlab页面，此时可用域账号登录，完成后会跳转回到Jenkins首页。
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yiguitao.com/2017/06/19/jenkins-Sonar发布流水线/" data-id="cj43us3p80001v0ows8vxyqrg" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/19/redis-多数据库/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">redis</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/19/jenkins-Sonar发布流水线/">jenkins+Sonar发布流水线</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/19/redis-多数据库/">redis</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/16/php单元测试-契约测试/">php单元测试 契约测试</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/16/php实现协程-真正的异步/">php实现协程 真正的异步</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/16/编程故事卡/">编程故事卡</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 陈康(探讨技术加微信：ckwahaha)<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
