@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yiguitao.com/2017/06/19/jenkins-Sonar发布流水线/index.html">
 <meta property="og:site_name" content="陈康">
 <meta property="og:description" content="Sonar  开发语言:Java Ruby 查看源码»  操作系统:跨平台  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。  点击查看Sonar安装和使用 Jenkins  1,安装：从官网下载安装文件后，直接运行即可;  2,变更支持：Jenkins能从代码仓库（Svn/Git）中获">
-<meta property="og:updated_time" content="2017-06-19T08:05:53.903Z">
+<meta property="og:updated_time" content="2017-06-19T08:10:50.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jenkins+Sonar发布流水线">
 <meta name="twitter:description" content="Sonar  开发语言:Java Ruby 查看源码»  操作系统:跨平台  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。  点击查看Sonar安装和使用 Jenkins  1,安装：从官网下载安装文件后，直接运行即可;  2,变更支持：Jenkins能从代码仓库（Svn/Git）中获">
@@ -56,7 +56,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yiguitao.com"></form>
@@ -89,28 +89,13 @@
       
         <h3 id="Sonar"><a href="#Sonar" class="headerlink" title="Sonar"></a>Sonar</h3><p>  开发语言:Java Ruby <a href="https://github.com/SonarSource/sonarqube" target="_blank" rel="external">查看源码»</a><br>  操作系统:跨平台<br>  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。<br>  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。<br>  <a href="https://www.ibm.com/developerworks/cn/java/j-lo-sonar/" target="_blank" rel="external">点击查看Sonar安装和使用</a></p>
 <h3 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h3><p>  1,安装：从官网下载安装文件后，直接运行即可;<br>  2,变更支持：Jenkins能从代码仓库（Svn/Git）中获取并产生代码更新列表并显示到流水线信息中;<br>  3,JUnit/TestNG图表等形式提供详细的测试报表功能;<br>  4,Jenkins支持分布式构建;<br>  5,Jenkins 还支持第三方插件(所以可以和Sonar一块使用);</p>
-<h4 id="部署Jenkins服务"><a href="#部署Jenkins服务" class="headerlink" title="部署Jenkins服务"></a>部署Jenkins服务</h4><pre><code>安装环境介绍
-安装 Jenkins
-新建 /opt/soft/jenkins 目录
-[jenkins](https://jenkins.io/download/) 官网下载安装包
-将 jenkins.war 拷贝到此目录下
-初始化运行，执行以下命令，默认以管理员身份启动运行
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd /opt/soft/jenkins;</div><div class="line">export JAVA_HOME=/opt/jdk1.8.0_51;</div><div class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH;</div><div class="line">export JENKINS_HOME=/opt/soft/jenkins/workdir/;</div><div class="line">java -jar /opt/soft/jenkins/jenkins.war --httpPort=80</div></pre></td></tr></table></figure>
+<h4 id="部署Jenkins服务"><a href="#部署Jenkins服务" class="headerlink" title="部署Jenkins服务"></a>部署Jenkins服务</h4><p>  安装环境介绍<br>  安装 Jenkins<br>  新建 /opt/soft/jenkins 目录<br>  <a href="https://jenkins.io/download/" target="_blank" rel="external">jenkins</a> 官网下载安装包<br>  将 jenkins.war 拷贝到此目录下<br>  初始化运行，执行以下命令，默认以管理员身份启动运行<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd /opt/soft/jenkins;</div><div class="line">export JAVA_HOME=/opt/jdk1.8.0_51;</div><div class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH;</div><div class="line">export JENKINS_HOME=/opt/soft/jenkins/workdir/;</div><div class="line">java -jar /opt/soft/jenkins/jenkins.war --httpPort=80</div></pre></td></tr></table></figure></p>
+<p>  在浏览器里输入安装的ip地址，可以进入 Jenkins<br>  配置 Jenkins<br>  从左侧面板的“系统管理”按钮进入配置管理页面<br>  首先点击“管理插件”页面，在“高级”Tab页上传必要的插件，包括Git、Gitlab Auth、Role-Based Authorization等<br>  然后进入“Configure Global Security”页面，勾选“启用安全”，安全域里选择Gitlab登录，并添加相关信息<br>  在“Configure Global Security”页面的安全域“权限”中选择“Role-Based Strategy”，然后到“Manage and Assign Roles”页面配置项目角色和权限<br>  域名映射<br>  启动时，设置 –httpPort=80，再由网管指定域名 <a href="http://yiguitao.com">http://yiguitao.com</a> 映射即可<br>  集成Gitlab登录后，用户登录时会跳转到Gitlab页面，此时可用域账号登录，完成后会跳转回到Jenkins首页。</p>
 
-在浏览器里输入安装的ip地址，可以进入 Jenkins
-配置 Jenkins
-从左侧面板的“系统管理”按钮进入配置管理页面
-首先点击“管理插件”页面，在“高级”Tab页上传必要的插件，包括Git、Gitlab Auth、Role-Based Authorization等
-然后进入“Configure Global Security”页面，勾选“启用安全”，安全域里选择Gitlab登录，并添加相关信息
-在“Configure Global Security”页面的安全域“权限”中选择“Role-Based Strategy”，然后到“Manage and Assign Roles”页面配置项目角色和权限
-域名映射
-启动时，设置 --httpPort=80，再由网管指定域名 http://yiguitao.com 映射即可
-集成Gitlab登录后，用户登录时会跳转到Gitlab页面，此时可用域账号登录，完成后会跳转回到Jenkins首页。
-</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yiguitao.com/2017/06/19/jenkins-Sonar发布流水线/" data-id="cj43ux6ze000340owhtwdu1df" class="article-share-link">Share</a>
+      <a data-url="http://yiguitao.com/2017/06/19/jenkins-Sonar发布流水线/" data-id="cj43v0w830001bkow5cddox3v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -153,7 +138,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Arkiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
@@ -163,7 +148,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Siste innlegg</h3>
     <div class="widget">
       <ul>
         
