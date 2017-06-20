@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="Sonar  开发语言:Java Ruby 查看源码»  操作系统:跨平台  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。  点击查看Sonar安装和使用 Jenkins  1,安装：从官网下载安装文件后，直接运行即可;  2,变更支持：Jenkins能从代码仓库（Svn/Git）中获">
+<meta name="description" content="责任链模式 设计模式有很多种,出名的有24种,工厂模式，观察者模式,单例模式等等.. 下面说一下责任链模式, 注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。 实例：用责任链模式,重构多层if else嵌套 1 通过函数方法属性构造: 1234567891011abstract class  RepaymentCalculateAbstract&amp;#123;">
 <meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jenkins+Sonar发布流水线">
-<meta property="og:url" content="http://yiguitao.com/2017/06/19/jenkins-Sonar发布流水线/index.html">
+<meta property="og:title" content="设计模式之责任链模式">
+<meta property="og:url" content="http://yiguitao.com/2017/06/20/设计模式之责任链模式/index.html">
 <meta property="og:site_name" content="陈康">
-<meta property="og:description" content="Sonar  开发语言:Java Ruby 查看源码»  操作系统:跨平台  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。  点击查看Sonar安装和使用 Jenkins  1,安装：从官网下载安装文件后，直接运行即可;  2,变更支持：Jenkins能从代码仓库（Svn/Git）中获">
-<meta property="og:updated_time" content="2017-06-20T04:51:28.009Z">
+<meta property="og:description" content="责任链模式 设计模式有很多种,出名的有24种,工厂模式，观察者模式,单例模式等等.. 下面说一下责任链模式, 注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。 实例：用责任链模式,重构多层if else嵌套 1 通过函数方法属性构造: 1234567891011abstract class  RepaymentCalculateAbstract&amp;#123;">
+<meta property="og:updated_time" content="2017-06-20T06:51:48.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jenkins+Sonar发布流水线">
-<meta name="twitter:description" content="Sonar  开发语言:Java Ruby 查看源码»  操作系统:跨平台  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。  点击查看Sonar安装和使用 Jenkins  1,安装：从官网下载安装文件后，直接运行即可;  2,变更支持：Jenkins能从代码仓库（Svn/Git）中获">
+<meta name="twitter:title" content="设计模式之责任链模式">
+<meta name="twitter:description" content="责任链模式 设计模式有很多种,出名的有24种,工厂模式，观察者模式,单例模式等等.. 下面说一下责任链模式, 注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。 实例：用责任链模式,重构多层if else嵌套 1 通过函数方法属性构造: 1234567891011abstract class  RepaymentCalculateAbstract&amp;#123;">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yiguitao.com/2017/06/19/jenkins-Sonar发布流水线/"/>
+  <link rel="canonical" href="http://yiguitao.com/2017/06/20/设计模式之责任链模式/"/>
 
 
 
 
 
-  <title>jenkins+Sonar发布流水线 | 陈康</title>
+  <title>设计模式之责任链模式 | 陈康</title>
   
 
 
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/19/jenkins-Sonar发布流水线/">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/20/设计模式之责任链模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jenkins+Sonar发布流水线</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式之责任链模式</h1>
         
 
         <div class="post-meta">
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-19T15:34:11+08:00">
-                2017-06-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-20T14:34:50+08:00">
+                2017-06-20
               </time>
             
 
@@ -321,11 +321,12 @@
       
 
       
-        <h3 id="Sonar"><a href="#Sonar" class="headerlink" title="Sonar"></a>Sonar</h3><p>  开发语言:Java Ruby <a href="https://github.com/SonarSource/sonarqube" target="_blank" rel="external">查看源码»</a><br>  操作系统:跨平台<br>  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。<br>  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。<br>  <a href="https://www.ibm.com/developerworks/cn/java/j-lo-sonar/" target="_blank" rel="external">点击查看Sonar安装和使用</a></p>
-<h3 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h3><p>  1,安装：从官网下载安装文件后，直接运行即可;<br>  2,变更支持：Jenkins能从代码仓库（Svn/Git）中获取并产生代码更新列表并显示到流水线信息中;<br>  3,JUnit/TestNG图表等形式提供详细的测试报表功能;<br>  4,Jenkins支持分布式构建;<br>  5,Jenkins 还支持第三方插件(所以可以和Sonar一块使用);</p>
-<h4 id="部署Jenkins服务"><a href="#部署Jenkins服务" class="headerlink" title="部署Jenkins服务"></a>部署Jenkins服务</h4><p>  安装环境介绍<br>  安装 Jenkins<br>    <a id="more"></a><br>  新建 /opt/soft/jenkins 目录<br>  <a href="https://jenkins.io/download/" target="_blank" rel="external">jenkins</a> 官网下载安装包<br>  将 jenkins.war 拷贝到此目录下<br>  初始化运行，执行以下命令，默认以管理员身份启动运行<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd /opt/soft/jenkins;</div><div class="line">export JAVA_HOME=/opt/jdk1.8.0_51;</div><div class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH;</div><div class="line">export JENKINS_HOME=/opt/soft/jenkins/workdir/;</div><div class="line">java -jar /opt/soft/jenkins/jenkins.war --httpPort=80</div></pre></td></tr></table></figure></p>
-<p>  在浏览器里输入安装的ip地址，可以进入 Jenkins<br>  配置 Jenkins<br>  从左侧面板的“系统管理”按钮进入配置管理页面<br>  首先点击“管理插件”页面，在“高级”Tab页上传必要的插件，包括Git、Gitlab Auth、Role-Based Authorization等<br>  然后进入“Configure Global Security”页面，勾选“启用安全”，安全域里选择Gitlab登录，并添加相关信息<br>  在“Configure Global Security”页面的安全域“权限”中选择“Role-Based Strategy”，然后到“Manage and Assign Roles”页面配置项目角色和权限<br>  域名映射<br>  启动时，设置 –httpPort=80，再由网管指定域名 <a href="http://yiguitao.com">http://yiguitao.com</a> 映射即可<br>  集成Gitlab登录后，用户登录时会跳转到Gitlab页面，此时可用域账号登录，完成后会跳转回到Jenkins首页。</p>
-
+        <h3 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h3><p> 设计模式有很多种,出名的有24种,工厂模式，观察者模式,单例模式等等..<br> 下面说一下责任链模式,</p>
+<h5 id="注意-实例化方法不可以用new-要嵌入例如放在构造方法了-new是强依赖一个方法。"><a href="#注意-实例化方法不可以用new-要嵌入例如放在构造方法了-new是强依赖一个方法。" class="headerlink" title="注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。"></a>注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。</h5><p> 实例：用责任链模式,重构多层if else嵌套<br> 1 通过函数方法属性构造:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">abstract class  RepaymentCalculateAbstract</div><div class="line">&#123;</div><div class="line">    protected $next ;</div><div class="line">    public function setNextCalculate(RepaymentCalculateAbstract $nextCalculate)</div><div class="line">    &#123;</div><div class="line">        $this-&gt;next = $nextCalculate;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">   abstract public function calculate($parms) ;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class JanuaryRepayment extends RepaymentCalculateAbstract</div><div class="line">&#123;</div><div class="line">    public function calculate($parms)</div><div class="line">    &#123;</div><div class="line">        echo &apos;Jan-&apos;.$parms ;</div><div class="line">        $this-&gt;next-&gt;calculate($parms);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <a id="more"></a>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class FebruaryRepayment extends RepaymentCalculateAbstract</div><div class="line">&#123;</div><div class="line">    public function calculate($parms)</div><div class="line">    &#123;</div><div class="line">        //pass</div><div class="line">        $parms = 100 + $parms ;</div><div class="line">        echo &apos;Feb&apos;.$parms ;</div><div class="line">        $this-&gt;next-&gt;calculate($parms);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class AppRepaymentCalculate extends RestAbstractController</div><div class="line">&#123;</div><div class="line">    public function calculate(Request $request , FebruaryRepayment $Feb , JanuaryRepayment $Jan )</div><div class="line">    &#123;</div><div class="line">        $Jan-&gt;setNextCalculate($Feb) ;</div><div class="line">        $Feb-&gt;setNextCalculate($Mar);</div><div class="line">        $Jan-&gt;calculate(&apos;100&apos;) ;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -367,8 +368,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/19/redis-多数据库/" rel="next" title="redis">
-                <i class="fa fa-chevron-left"></i> redis
+              <a href="/2017/06/19/jenkins-Sonar发布流水线/" rel="next" title="jenkins+Sonar发布流水线">
+                <i class="fa fa-chevron-left"></i> jenkins+Sonar发布流水线
               </a>
             
           </div>
@@ -376,10 +377,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/20/设计模式之责任链模式/" rel="prev" title="设计模式之责任链模式">
-                设计模式之责任链模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -499,7 +496,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sonar"><span class="nav-number">1.</span> <span class="nav-text">Sonar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jenkins"><span class="nav-number">2.</span> <span class="nav-text">Jenkins</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署Jenkins服务"><span class="nav-number">2.1.</span> <span class="nav-text">部署Jenkins服务</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#责任链模式"><span class="nav-number">1.</span> <span class="nav-text">责任链模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意-实例化方法不可以用new-要嵌入例如放在构造方法了-new是强依赖一个方法。"><span class="nav-number">1.0.1.</span> <span class="nav-text">注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
