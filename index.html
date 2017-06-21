@@ -200,7 +200,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -210,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -253,6 +253,119 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/21/mysql-慢查询/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/searchicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈康">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/21/mysql-慢查询/" itemprop="url">mysql 慢查询</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-21T17:12:13+08:00">
+                2017-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p> show 可以查看mysql性能<br> explain， profiling分析查询<br> Mysql&gt; show status ——显示状态信息（扩展show status like ‘<em>*</em>‘）<br> Mysql&gt; show innodb status ——显示InnoDB存储引擎的状态(可以查看任意存储引擎)<br> Mysql&gt; show processlist ——查看当前SQL执行，包括执行状态、是否锁表等（update本身就是锁哦）<br> 比较全的Show命令的使用可参考： 可以百度搜索<br> 慢查询日志开启：<br> 1,配置文件开启<br> 在配置文件my.cnf或my.ini中在[mysqld]一行下面加入两个配置参数<br> log-slow-queries=/data/mysqldata/slow-query.log<br> long_query_time=2<br> 2,命令开启：<br> 最常用的还是explain分析查询：<br> 格式：explain sql<br> 可以查看该语句哪个键有索引值，是否可以优化，看possible_keys,rows,key_len,type即可</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/21/linux-三大利器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -282,7 +395,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-21T09:05:31+08:00">
                 2017-06-21
@@ -397,7 +510,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-20T14:34:50+08:00">
                 2017-06-20
@@ -442,7 +555,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/20/设计模式之责任链模式/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -516,7 +629,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-19T15:34:11+08:00">
                 2017-06-19
@@ -561,7 +674,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/19/jenkins-Sonar发布流水线/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -635,7 +748,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-19T10:33:50+08:00">
                 2017-06-19
@@ -752,7 +865,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-16T17:14:42+08:00">
                 2017-06-16
@@ -866,7 +979,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-16T16:21:31+08:00">
                 2017-06-16
@@ -979,7 +1092,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-16T16:16:12+08:00">
                 2017-06-16
@@ -1092,7 +1205,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-15T18:22:56+08:00">
                 2017-06-15
@@ -1206,7 +1319,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-15T17:44:12+08:00">
                 2017-06-15
@@ -1282,120 +1395,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/15/git上传流程命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/searchicon.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈康">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/15/git上传流程命令/" itemprop="url">git基本命令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-15T13:36:52+08:00">
-                2017-06-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h3><p> ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key<br> git config –global user.name “Your Name”      你名<br> git config –global user.email “email@example.com”  你邮箱（随意）<br> git clone ssh路径 连接远程（默认在桌面）<br> git流程<br> git status  查看状态<br> git add .文件名  准备上传的文件<br> git reset 文件名  撤销准备上传的文件<br> git commit -m ‘add 文件名’  上传文件到本地仓库<br> git commit -am ‘edit b.php’<br> git log  查看日志<br> git push origin master:master  上传文件到远程仓库<br> git push origin 本地分支名：远程仓库分支名  把整个分支上传到远程分支<br> git pull  下载文件到本地仓库<br> git diff  查看冲突</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1438,8 +1444,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1451,8 +1457,8 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -1510,7 +1516,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://yiguitao.com">CK陈康</a>
+  Erstellt mit  <a class="theme-link" href="http://yiguitao.com">CK陈康</a>
 </div>
 
 <div class="theme-info">

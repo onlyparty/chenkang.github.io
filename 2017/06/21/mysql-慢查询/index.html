@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="php," />
+  <meta name="keywords" content="mysql," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="责任链模式 设计模式有很多种,出名的有24种,工厂模式，观察者模式,单例模式等等.. 下面说一下责任链模式, 注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。 实例：用责任链模式,重构多层if else嵌套 1 通过函数方法属性构造: 1234567891011abstract class  RepaymentCalculateAbstract&amp;#123;">
-<meta name="keywords" content="php">
+<meta name="description" content="show 可以查看mysql性能 explain， profiling分析查询 Mysql&amp;gt; show status ——显示状态信息（扩展show status like ‘*‘） Mysql&amp;gt; show innodb status ——显示InnoDB存储引擎的状态(可以查看任意存储引擎) Mysql&amp;gt; show processlist ——查看当前SQL执行，包括执行状态">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式之责任链模式">
-<meta property="og:url" content="http://yiguitao.com/2017/06/20/设计模式之责任链模式/index.html">
+<meta property="og:title" content="mysql 慢查询">
+<meta property="og:url" content="http://yiguitao.com/2017/06/21/mysql-慢查询/index.html">
 <meta property="og:site_name" content="陈康">
-<meta property="og:description" content="责任链模式 设计模式有很多种,出名的有24种,工厂模式，观察者模式,单例模式等等.. 下面说一下责任链模式, 注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。 实例：用责任链模式,重构多层if else嵌套 1 通过函数方法属性构造: 1234567891011abstract class  RepaymentCalculateAbstract&amp;#123;">
-<meta property="og:updated_time" content="2017-06-20T06:51:48.958Z">
+<meta property="og:description" content="show 可以查看mysql性能 explain， profiling分析查询 Mysql&amp;gt; show status ——显示状态信息（扩展show status like ‘*‘） Mysql&amp;gt; show innodb status ——显示InnoDB存储引擎的状态(可以查看任意存储引擎) Mysql&amp;gt; show processlist ——查看当前SQL执行，包括执行状态">
+<meta property="og:updated_time" content="2017-06-21T09:24:50.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式之责任链模式">
-<meta name="twitter:description" content="责任链模式 设计模式有很多种,出名的有24种,工厂模式，观察者模式,单例模式等等.. 下面说一下责任链模式, 注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。 实例：用责任链模式,重构多层if else嵌套 1 通过函数方法属性构造: 1234567891011abstract class  RepaymentCalculateAbstract&amp;#123;">
+<meta name="twitter:title" content="mysql 慢查询">
+<meta name="twitter:description" content="show 可以查看mysql性能 explain， profiling分析查询 Mysql&amp;gt; show status ——显示状态信息（扩展show status like ‘*‘） Mysql&amp;gt; show innodb status ——显示InnoDB存储引擎的状态(可以查看任意存储引擎) Mysql&amp;gt; show processlist ——查看当前SQL执行，包括执行状态">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yiguitao.com/2017/06/20/设计模式之责任链模式/"/>
+  <link rel="canonical" href="http://yiguitao.com/2017/06/21/mysql-慢查询/"/>
 
 
 
 
 
-  <title>设计模式之责任链模式 | 陈康</title>
+  <title>mysql 慢查询 | 陈康</title>
   
 
 
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/20/设计模式之责任链模式/">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/21/mysql-慢查询/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式之责任链模式</h1>
+          <h1 class="post-title" itemprop="name headline">mysql 慢查询</h1>
         
 
         <div class="post-meta">
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-20T14:34:50+08:00">
-                2017-06-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-21T17:12:13+08:00">
+                2017-06-21
               </time>
             
 
@@ -321,12 +321,8 @@
       
 
       
-        <h3 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h3><p> 设计模式有很多种,出名的有24种,工厂模式，观察者模式,单例模式等等..<br> 下面说一下责任链模式,</p>
-<h5 id="注意-实例化方法不可以用new-要嵌入例如放在构造方法了-new是强依赖一个方法。"><a href="#注意-实例化方法不可以用new-要嵌入例如放在构造方法了-new是强依赖一个方法。" class="headerlink" title="注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。"></a>注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。</h5><p> 实例：用责任链模式,重构多层if else嵌套<br> 1 通过函数方法属性构造:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">abstract class  RepaymentCalculateAbstract</div><div class="line">&#123;</div><div class="line">    protected $next ;</div><div class="line">    public function setNextCalculate(RepaymentCalculateAbstract $nextCalculate)</div><div class="line">    &#123;</div><div class="line">        $this-&gt;next = $nextCalculate;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">   abstract public function calculate($parms) ;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class JanuaryRepayment extends RepaymentCalculateAbstract</div><div class="line">&#123;</div><div class="line">    public function calculate($parms)</div><div class="line">    &#123;</div><div class="line">        echo &apos;Jan-&apos;.$parms ;</div><div class="line">        $this-&gt;next-&gt;calculate($parms);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
- <a id="more"></a>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class FebruaryRepayment extends RepaymentCalculateAbstract</div><div class="line">&#123;</div><div class="line">    public function calculate($parms)</div><div class="line">    &#123;</div><div class="line">        //pass</div><div class="line">        $parms = 100 + $parms ;</div><div class="line">        echo &apos;Feb&apos;.$parms ;</div><div class="line">        $this-&gt;next-&gt;calculate($parms);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class AppRepaymentCalculate extends RestAbstractController</div><div class="line">&#123;</div><div class="line">    public function calculate(Request $request , FebruaryRepayment $Feb , JanuaryRepayment $Jan )</div><div class="line">    &#123;</div><div class="line">        $Jan-&gt;setNextCalculate($Feb) ;</div><div class="line">        $Feb-&gt;setNextCalculate($Mar);</div><div class="line">        $Jan-&gt;calculate(&apos;100&apos;) ;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p> show 可以查看mysql性能<br> explain， profiling分析查询<br> Mysql&gt; show status ——显示状态信息（扩展show status like ‘<em>*</em>‘）<br> Mysql&gt; show innodb status ——显示InnoDB存储引擎的状态(可以查看任意存储引擎)<br> Mysql&gt; show processlist ——查看当前SQL执行，包括执行状态、是否锁表等（update本身就是锁哦）<br> 比较全的Show命令的使用可参考： 可以百度搜索<br> 慢查询日志开启：<br> 1,配置文件开启<br> 在配置文件my.cnf或my.ini中在[mysqld]一行下面加入两个配置参数<br> log-slow-queries=/data/mysqldata/slow-query.log<br> long_query_time=2<br> 2,命令开启：<br> 最常用的还是explain分析查询：<br> 格式：explain sql<br> 可以查看该语句哪个键有索引值，是否可以优化，看possible_keys,rows,key_len,type即可</p>
+
       
     </div>
 
@@ -355,7 +351,7 @@
       
         <div class="post-tags">
           
-            <a href="/next/tags/php/" rel="tag"># php</a>
+            <a href="/next/tags/mysql/" rel="tag"># mysql</a>
           
         </div>
       
@@ -368,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/19/jenkins-Sonar发布流水线/" rel="next" title="jenkins+Sonar发布流水线">
-                <i class="fa fa-chevron-left"></i> jenkins+Sonar发布流水线
+              <a href="/2017/06/21/linux-三大利器/" rel="next" title="linux 三大利器">
+                <i class="fa fa-chevron-left"></i> linux 三大利器
               </a>
             
           </div>
@@ -377,10 +373,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/21/linux-三大利器/" rel="prev" title="linux 三大利器">
-                linux 三大利器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -427,17 +419,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/searchicon.png"
@@ -490,22 +473,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#责任链模式"><span class="nav-number">1.</span> <span class="nav-text">责任链模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意-实例化方法不可以用new-要嵌入例如放在构造方法了-new是强依赖一个方法。"><span class="nav-number">1.0.1.</span> <span class="nav-text">注意:实例化方法不可以用new,要嵌入例如放在构造方法了,new是强依赖一个方法。</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
