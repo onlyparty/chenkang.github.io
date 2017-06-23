@@ -253,6 +253,123 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/23/Windows-Mongodb的配置与使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/img.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈康">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/23/Windows-Mongodb的配置与使用/" itemprop="url">Windows Mongodb的配置与使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-23T16:03:55+08:00">
+                2017-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="Mongodb"><a href="#Mongodb" class="headerlink" title="Mongodb"></a><a href="https://www.mongodb.com/" target="_blank" rel="external">Mongodb</a></h4><p> 1,去官网下载安装文件,将D:\Program Files\MongoDB\Server\3.2\bin加入环境变量<br> 新建data\db文件夹用来存放数据库<br> 运行<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath &quot;D:\Program Files\MongoDB\data\db&quot;</div></pre></td></tr></table></figure></p>
+<h5 id="加入Windows服务"><a href="#加入Windows服务" class="headerlink" title="加入Windows服务"></a>加入Windows服务</h5><p> 新建data\log文件夹用来存放日志<br> 新建mongo.config并写入<br> dbpath=D:\Program Files\MongoDB\data\db\<br> logpath=D:\Program Files\MongoDB\data\log\mongo.log<br> 用管理员身份运行cmd并执行命令<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --config &quot;D:\Program Files\MongoDB\mongo.config&quot; --serviceName MongoDB -install</div></pre></td></tr></table></figure></p>
+<p>  配置权限<br>  添加管理员帐号，cmd小黑框执行mongo<br>  1, # mongoDB 3.0 createUser<br>  2, db.createUser({user:”admin”,pwd:”admin”,roles:[{role:”userAdminAnyDatabase”,db:”admin”}]});<br>  删除掉原来的MongoDB服务<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!--more--&gt;</div><div class="line">  sc delete MongoDB</div></pre></td></tr></table></figure></p>
+<p>  重新创建Windows服务，加入–auth参数<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --config &quot;D:\Program Files\MongoDB\mongo.config&quot; --auth --serviceName MongoDB -install</div></pre></td></tr></table></figure></p>
+<p> 基本命令：<br> MongoDB：net start MongoDB  启动<br> MongoDB：net stop  MongoDB   停止<br> MongoDB：sc delete MongoDB  删除</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/23/php-Collection扩展类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1296,119 +1413,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/16/php实现协程-真正的异步/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/img.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈康">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/16/php实现协程-真正的异步/" itemprop="url">php实现协程 真正的异步</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-16T16:21:31+08:00">
-                2017-06-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="php协程-主要函数-yield"><a href="#php协程-主要函数-yield" class="headerlink" title="php协程  主要函数 yield"></a>php协程  主要函数 yield</h2><p> （异步：不会阻断事务的进行,程序会继续走下去）<br>   通过composer先安装 composer require recoil/recoil<br>   <a href="http://www.yiguitao.com/2017/06/15/php-swoole%E6%89%A9%E5%B1%95/" target="_blank" rel="external">swoole</a>协程<br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"> require &apos;ok.php&apos;;</div><div class="line"></div><div class="line">$i = 10000;</div><div class="line"></div><div class="line">$c = new Coroutine();</div><div class="line">$c-&gt;start(task1());</div><div class="line">$c-&gt;start(task2());</div><div class="line"></div><div class="line">function task1()&#123;</div><div class="line">    global $i;</div><div class="line">    echo &quot;wait start&quot; . PHP_EOL;</div><div class="line">    while ($i-- &gt; 0) &#123;</div><div class="line">        yield;</div><div class="line">    &#125;</div><div class="line">    echo &quot;wait end&quot; . PHP_EOL;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function task2()&#123;</div><div class="line">    echo &quot;Hello &quot; . PHP_EOL;</div><div class="line">    yield;</div><div class="line">    echo &quot;world!&quot; . PHP_EOL;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1458,7 +1462,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1471,7 +1475,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">Tags</span>
               
             </div>
