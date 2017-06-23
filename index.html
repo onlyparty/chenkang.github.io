@@ -321,34 +321,26 @@
 
       
         
-          
-            <h4 id="Collection扩展类"><a href="#Collection扩展类" class="headerlink" title="Collection扩展类"></a>Collection扩展类</h4><p> 作用：对数组的处理扩展</p>
+          <h4 id="Collection扩展类"><a href="#Collection扩展类" class="headerlink" title="Collection扩展类"></a>Collection扩展类</h4> <font color="red" face="黑体">作用：对数组的处理扩展</font>
+
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$collection = collect([&apos;chenkang&apos;, &apos;yangshuo&apos;, null])-&gt;map(function ($name) &#123;</div><div class="line">                  return strtoupper($name);</div><div class="line">              &#125;)-&gt;reject(function ($name) &#123;</div><div class="line">                  return empty($name);</div><div class="line">              &#125;);</div></pre></td></tr></table></figure>
 <p> Collection类允许你使用方法链对底层数组执行匹配和减少操作，通常，每个Collection方法都会返回一个新的Collection实例。<br> 常用操作：</p>
 <h5 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h5><pre><code>map方法遍历集合并传递每个值给给定回调。该回调可以修改数据项并返回，从而生成一个新的经过修改的集合：
-$collection = collect([1, 2, 3, 4, 5]);
-$multiplied = $collection-&gt;map(function ($item, $key) {
-    return $item * 2;
-});
-$multiplied-&gt;all();
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$collection = collect([1, 2, 3, 4, 5]);</div><div class="line">$multiplied = $collection-&gt;map(function ($item, $key) &#123;</div><div class="line">    return $item * 2;</div><div class="line">&#125;);</div><div class="line">$multiplied-&gt;all();</div></pre></td></tr></table></figure>
+
 返回值： [2, 4, 6, 8, 10]
 </code></pre><h5 id="collapse"><a href="#collapse" class="headerlink" title="collapse()"></a>collapse()</h5><pre><code>collapse方法将一个多维数组集合收缩成一个一维数组：
-$collection = collect([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
-$collapsed = $collection-&gt;collapse();
-$collapsed-&gt;all();
-返回值： [1, 2, 3, 4, 5, 6, 7, 8, 9]
-</code></pre><h5 id="count"><a href="#count" class="headerlink" title="count()"></a>count()</h5><pre><code>count方法返回集合中所有项的数目：
-$collection = collect([1, 2, 3, 4]);
-$collection-&gt;count();
-返回值： 4
-</code></pre><h5 id="diff"><a href="#diff" class="headerlink" title="diff()"></a>diff()</h5><pre><code>diff方法将集合和另一个集合或原生PHP数组作比较：
-$collection = collect([1, 2, 3, 4, 5]);
-$diff = $collection-&gt;diff([2, 4, 6, 8]);
-$diff-&gt;all();
-返回值： [1, 3, 5]
-</code></pre><p>  还有很多示例：例如each(),filter(),first(),forPage()<a href="http://blog.csdn.net/tang05709/article/details/51178023" target="_blank" rel="external">……</a><br>  <font color="red" face="黑体">有了这个php扩展类 让我们以后不用在写一大堆foreach了!是不是很爽!</font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$collection = collect([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);</div><div class="line">$collapsed = $collection-&gt;collapse();</div><div class="line">$collapsed-&gt;all();</div></pre></td></tr></table></figure>
 
-          
+返回值： [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/23/php-Collection扩展类/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -459,8 +451,7 @@ $diff-&gt;all();
       
         
           
-            <h3 id="闭包特性"><a href="#闭包特性" class="headerlink" title="闭包特性"></a>闭包特性</h3><p> 闭包示例：<br> <img src="images/1.png" alt="bibao"></p>
-<h5 id="扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create-function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。"><a href="#扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create-function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。" class="headerlink" title="扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。"></a>扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。</h5><p>  理解：闭包也就是匿名函数，因为没有名称,闭包就是函数内的函数,PHP5.3 引入。<br>  注意：闭包的代码相对优雅，但是逻辑比较容易混淆，相比其他方式执行效率相对较低，要慎用。<br>  建议在代码结构比较乱，需要封装的时候使用<br>  如果在外层函数需要引进来新类，在闭包函数用use使用接口。</p>
+            <h3 id="闭包特性"><a href="#闭包特性" class="headerlink" title="闭包特性"></a>闭包特性</h3><p> 闭包示例：<br> <img src="images/1.png" alt="bibao"><br>  <font color="red" face="黑体">扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。</font><br>  理解：闭包也就是匿名函数，因为没有名称,闭包就是函数内的函数,PHP5.3 引入。<br>  注意：闭包的代码相对优雅，但是逻辑比较容易混淆，相比其他方式执行效率相对较低，要慎用。<br>  建议在代码结构比较乱，需要封装的时候使用<br>  如果在外层函数需要引进来新类，在闭包函数用use使用接口。</p>
 
           
         
