@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="php," />
 
 
 
@@ -93,17 +93,19 @@
 
 
 
-<meta name="description" content="git常用命令 ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key git config –global user.name “Your Name”      你名 git config –global user.email “email@example.com”  你邮箱（随意） git clone ssh路径 连接远程（默认在桌面）">
-<meta name="keywords" content="git">
+<meta name="description" content="闭包特性 闭包示例：  扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。  理解：闭包也就是匿名函数，因为没有名称,闭包就是函数内的函数,PHP5.3 引入。  注意：闭包的代码相对优雅，但是逻辑比较容易混淆，相比其他方式执行效率相对较低，要慎用。  建议在代码结构比较乱，需要封装的时候使用  如果在">
+<meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git基本命令">
-<meta property="og:url" content="http://yiguitao.com/2017/06/15/git上传流程命令/index.html">
+<meta property="og:title" content="php 闭包特性">
+<meta property="og:url" content="http://yiguitao.com/2017/06/23/php-闭包特性/index.html">
 <meta property="og:site_name" content="陈康">
-<meta property="og:description" content="git常用命令 ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key git config –global user.name “Your Name”      你名 git config –global user.email “email@example.com”  你邮箱（随意） git clone ssh路径 连接远程（默认在桌面）">
-<meta property="og:updated_time" content="2017-06-20T07:09:37.550Z">
+<meta property="og:description" content="闭包特性 闭包示例：  扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。  理解：闭包也就是匿名函数，因为没有名称,闭包就是函数内的函数,PHP5.3 引入。  注意：闭包的代码相对优雅，但是逻辑比较容易混淆，相比其他方式执行效率相对较低，要慎用。  建议在代码结构比较乱，需要封装的时候使用  如果在">
+<meta property="og:image" content="http://yiguitao.com/2017/06/23/php-闭包特性/images/1.png">
+<meta property="og:updated_time" content="2017-06-23T03:13:41.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git基本命令">
-<meta name="twitter:description" content="git常用命令 ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key git config –global user.name “Your Name”      你名 git config –global user.email “email@example.com”  你邮箱（随意） git clone ssh路径 连接远程（默认在桌面）">
+<meta name="twitter:title" content="php 闭包特性">
+<meta name="twitter:description" content="闭包特性 闭包示例：  扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。  理解：闭包也就是匿名函数，因为没有名称,闭包就是函数内的函数,PHP5.3 引入。  注意：闭包的代码相对优雅，但是逻辑比较容易混淆，相比其他方式执行效率相对较低，要慎用。  建议在代码结构比较乱，需要封装的时候使用  如果在">
+<meta name="twitter:image" content="http://yiguitao.com/2017/06/23/php-闭包特性/images/1.png">
 
 
 
@@ -131,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yiguitao.com/2017/06/15/git上传流程命令/"/>
+  <link rel="canonical" href="http://yiguitao.com/2017/06/23/php-闭包特性/"/>
 
 
 
 
 
-  <title>git基本命令 | 陈康</title>
+  <title>php 闭包特性 | 陈康</title>
   
 
 
@@ -255,8 +257,8 @@
   
   
 
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/15/git上传流程命令/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/23/php-闭包特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
@@ -273,7 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git基本命令</h1>
+          <h1 class="post-title" itemprop="name headline">php 闭包特性</h1>
         
 
         <div class="post-meta">
@@ -285,8 +287,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-15T13:36:52+08:00">
-                2017-06-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-23T10:36:14+08:00">
+                2017-06-23
               </time>
             
 
@@ -297,6 +299,8 @@
 
           
 
+          
+            
           
 
           
@@ -319,7 +323,8 @@
       
 
       
-        <h3 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h3><p> ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key<br> git config –global user.name “Your Name”      你名<br> git config –global user.email “email@example.com”  你邮箱（随意）<br> git clone ssh路径 连接远程（默认在桌面）<br> git流程<br> git status  查看状态<br> git add .文件名  准备上传的文件<br> git reset 文件名  撤销准备上传的文件<br> git commit -m ‘add 文件名’  上传文件到本地仓库<br> git commit -am ‘edit b.php’<br> git log  查看日志<br> git push origin master:master  上传文件到远程仓库<br> git push origin 本地分支名：远程仓库分支名  把整个分支上传到远程分支<br> git pull  下载文件到本地仓库<br> git diff  查看冲突</p>
+        <h3 id="闭包特性"><a href="#闭包特性" class="headerlink" title="闭包特性"></a>闭包特性</h3><p> 闭包示例：<br> <img src="images/1.png" alt="bibao"></p>
+<h5 id="扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create-function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。"><a href="#扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create-function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。" class="headerlink" title="扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。"></a>扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。</h5><p>  理解：闭包也就是匿名函数，因为没有名称,闭包就是函数内的函数,PHP5.3 引入。<br>  注意：闭包的代码相对优雅，但是逻辑比较容易混淆，相比其他方式执行效率相对较低，要慎用。<br>  建议在代码结构比较乱，需要封装的时候使用<br>  如果在外层函数需要引进来新类，在闭包函数用use使用接口。</p>
 
       
     </div>
@@ -349,7 +354,7 @@
       
         <div class="post-tags">
           
-            <a href="/next/tags/git/" rel="tag"># git</a>
+            <a href="/next/tags/php/" rel="tag"># php</a>
           
         </div>
       
@@ -362,15 +367,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/06/22/docker-容器/" rel="next" title="docker 容器">
+                <i class="fa fa-chevron-left"></i> docker 容器
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/15/laravel/" rel="prev" title="laravel">
-                laravel <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -394,6 +399,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -486,7 +495,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#git常用命令"><span class="nav-number">1.</span> <span class="nav-text">git常用命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包特性"><span class="nav-number">1.</span> <span class="nav-text">闭包特性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create-function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。"><span class="nav-number">1.0.1.</span> <span class="nav-text">扩展：PHP在引入闭包之前，也有一个可以创建匿名函数的函数：create function，但是代码逻辑只能写成字符串，不好维护，所以很少有人用。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
