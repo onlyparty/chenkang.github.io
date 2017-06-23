@@ -253,6 +253,143 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/23/php-Collection扩展类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/img.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈康">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/23/php-Collection扩展类/" itemprop="url">php Collection扩展类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-23T11:27:37+08:00">
+                2017-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="Collection扩展类"><a href="#Collection扩展类" class="headerlink" title="Collection扩展类"></a>Collection扩展类</h4><p> 作用：对数组的处理扩展</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$collection = collect([&apos;chenkang&apos;, &apos;yangshuo&apos;, null])-&gt;map(function ($name) &#123;</div><div class="line">                  return strtoupper($name);</div><div class="line">              &#125;)-&gt;reject(function ($name) &#123;</div><div class="line">                  return empty($name);</div><div class="line">              &#125;);</div></pre></td></tr></table></figure>
+<p> Collection类允许你使用方法链对底层数组执行匹配和减少操作，通常，每个Collection方法都会返回一个新的Collection实例。<br> 常用操作：</p>
+<h5 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h5><pre><code>map方法遍历集合并传递每个值给给定回调。该回调可以修改数据项并返回，从而生成一个新的经过修改的集合：
+$collection = collect([1, 2, 3, 4, 5]);
+$multiplied = $collection-&gt;map(function ($item, $key) {
+    return $item * 2;
+});
+$multiplied-&gt;all();
+返回值： [2, 4, 6, 8, 10]
+</code></pre><h5 id="collapse"><a href="#collapse" class="headerlink" title="collapse()"></a>collapse()</h5><pre><code>collapse方法将一个多维数组集合收缩成一个一维数组：
+$collection = collect([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
+$collapsed = $collection-&gt;collapse();
+$collapsed-&gt;all();
+返回值： [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre><h5 id="count"><a href="#count" class="headerlink" title="count()"></a>count()</h5><pre><code>count方法返回集合中所有项的数目：
+$collection = collect([1, 2, 3, 4]);
+$collection-&gt;count();
+返回值： 4
+</code></pre><h5 id="diff"><a href="#diff" class="headerlink" title="diff()"></a>diff()</h5><pre><code>diff方法将集合和另一个集合或原生PHP数组作比较：
+$collection = collect([1, 2, 3, 4, 5]);
+$diff = $collection-&gt;diff([2, 4, 6, 8]);
+$diff-&gt;all();
+返回值： [1, 3, 5]
+</code></pre><p>  还有很多示例：例如each(),filter(),first(),forPage()<a href="http://blog.csdn.net/tang05709/article/details/51178023" target="_blank" rel="external">……</a><br>  <font color="red" face="黑体">有了这个php扩展类 让我们以后不用在写一大堆foreach了!是不是很爽!</font></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/23/php-闭包特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1281,119 +1418,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/16/编程故事卡/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/img.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈康">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/16/编程故事卡/" itemprop="url">编程故事卡</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-16T16:16:12+08:00">
-                2017-06-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="开发一个故事功能之前"><a href="#开发一个故事功能之前" class="headerlink" title="开发一个故事功能之前"></a>开发一个故事功能之前</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">as    作为某一方 (作为一名客户)</div><div class="line">I want 我想做什么事情(我想提现但是要手续费 我想不用手续费)</div><div class="line">so that 结果 (看是否有抵用券,没有抵用券是否有积分可以兑换)</div></pre></td></tr></table></figure>
-<h2 id="验收条件"><a href="#验收条件" class="headerlink" title="验收条件"></a>验收条件</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Given 条件（进入到输入金额页面）</div><div class="line">when  行为 (输入金额)</div><div class="line">that  预期效果 或者实际效果 （金额是否有分隔符）</div><div class="line">开发一个新的story,按照流程走，有利于考虑的更全面，提高代码质量，减少以后开发后的bug</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1443,7 +1467,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

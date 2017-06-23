@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="redis," />
+  <meta name="keywords" content="php," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="redis 多数据库 目的： 让程序数据彼此分开同时又存储在相同的实例 理解： redis下，数据库是由一个整数索引标识，而不是由一个数据库名称。默认情况下，一个客户端连接到数据库0        一个redis实例下默认有16个数据库，默认从0开始,每个数据库都有属于自己的空间，不必担心之间的key冲突。 操作： 可以随意操作 切还库        1redis&amp;gt; select 2 用mo">
-<meta name="keywords" content="redis">
+<meta name="description" content="Collection扩展类 作用：对数组的处理扩展  12345$collection = collect([&amp;apos;chenkang&amp;apos;, &amp;apos;yangshuo&amp;apos;, null])-&amp;gt;map(function ($name) &amp;#123;                  return strtoupper($name);              &amp;#125;">
+<meta name="keywords" content="php">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redis">
-<meta property="og:url" content="http://yiguitao.com/2017/06/19/redis-多数据库/index.html">
+<meta property="og:title" content="php Collection扩展类">
+<meta property="og:url" content="http://yiguitao.com/2017/06/23/php-Collection扩展类/index.html">
 <meta property="og:site_name" content="陈康">
-<meta property="og:description" content="redis 多数据库 目的： 让程序数据彼此分开同时又存储在相同的实例 理解： redis下，数据库是由一个整数索引标识，而不是由一个数据库名称。默认情况下，一个客户端连接到数据库0        一个redis实例下默认有16个数据库，默认从0开始,每个数据库都有属于自己的空间，不必担心之间的key冲突。 操作： 可以随意操作 切还库        1redis&amp;gt; select 2 用mo">
-<meta property="og:updated_time" content="2017-06-19T05:19:20.564Z">
+<meta property="og:description" content="Collection扩展类 作用：对数组的处理扩展  12345$collection = collect([&amp;apos;chenkang&amp;apos;, &amp;apos;yangshuo&amp;apos;, null])-&amp;gt;map(function ($name) &amp;#123;                  return strtoupper($name);              &amp;#125;">
+<meta property="og:updated_time" content="2017-06-23T05:34:48.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redis">
-<meta name="twitter:description" content="redis 多数据库 目的： 让程序数据彼此分开同时又存储在相同的实例 理解： redis下，数据库是由一个整数索引标识，而不是由一个数据库名称。默认情况下，一个客户端连接到数据库0        一个redis实例下默认有16个数据库，默认从0开始,每个数据库都有属于自己的空间，不必担心之间的key冲突。 操作： 可以随意操作 切还库        1redis&amp;gt; select 2 用mo">
+<meta name="twitter:title" content="php Collection扩展类">
+<meta name="twitter:description" content="Collection扩展类 作用：对数组的处理扩展  12345$collection = collect([&amp;apos;chenkang&amp;apos;, &amp;apos;yangshuo&amp;apos;, null])-&amp;gt;map(function ($name) &amp;#123;                  return strtoupper($name);              &amp;#125;">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yiguitao.com/2017/06/19/redis-多数据库/"/>
+  <link rel="canonical" href="http://yiguitao.com/2017/06/23/php-Collection扩展类/"/>
 
 
 
 
 
-  <title>redis | 陈康</title>
+  <title>php Collection扩展类 | 陈康</title>
   
 
 
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/19/redis-多数据库/">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/23/php-Collection扩展类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">redis</h1>
+          <h1 class="post-title" itemprop="name headline">php Collection扩展类</h1>
         
 
         <div class="post-meta">
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-19T10:33:50+08:00">
-                2017-06-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-23T11:27:37+08:00">
+                2017-06-23
               </time>
             
 
@@ -321,11 +321,31 @@
       
 
       
-        <h2 id="redis-多数据库"><a href="#redis-多数据库" class="headerlink" title="redis 多数据库"></a>redis 多数据库</h2><p> 目的： 让程序数据彼此分开同时又存储在相同的实例<br> 理解： redis下，数据库是由一个整数索引标识，而不是由一个数据库名称。默认情况下，一个客户端连接到数据库0<br>        一个redis实例下默认有16个数据库，默认从0开始,每个数据库都有属于自己的空间，不必担心之间的key冲突。<br> 操作： 可以随意操作 切还库<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis&gt; select 2</div></pre></td></tr></table></figure></p>
-<pre><code>用move 命令 可以将键值 从1库迁入 2库
-</code></pre><p>扩展： 一个redis默认是16个数据库，也可以配置更多，当然16个库足够用了,<br>       配置如下：<br>       修改redis.conf下的databases指令：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">databases 64</div></pre></td></tr></table></figure></p>
-<h2 id="redis-事务"><a href="#redis-事务" class="headerlink" title="redis 事务"></a>redis 事务</h2><p>  事务表示的是一组动作，这组动作要么全部执行，要么全部不执行.<br>  redis 需要用到两个命令 MULTI（开启事务） exec (执行事务) DISCARD（取消事务）<br> 执行事务：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">redis&gt; MULTI</div><div class="line">OK</div><div class="line">redis&gt; SET a &quot;hello&quot;</div><div class="line">QUEUED</div><div class="line">redis&gt; DISCARD</div></pre></td></tr></table></figure></p>
-<p> 取消事务：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">redis&gt; MULTI</div><div class="line">OK</div><div class="line">redis&gt; SET a &quot;hello&quot;</div><div class="line">QUEUED</div><div class="line">redis&gt; DISCARD</div></pre></td></tr></table></figure></p>
+        <h4 id="Collection扩展类"><a href="#Collection扩展类" class="headerlink" title="Collection扩展类"></a>Collection扩展类</h4><p> 作用：对数组的处理扩展</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$collection = collect([&apos;chenkang&apos;, &apos;yangshuo&apos;, null])-&gt;map(function ($name) &#123;</div><div class="line">                  return strtoupper($name);</div><div class="line">              &#125;)-&gt;reject(function ($name) &#123;</div><div class="line">                  return empty($name);</div><div class="line">              &#125;);</div></pre></td></tr></table></figure>
+<p> Collection类允许你使用方法链对底层数组执行匹配和减少操作，通常，每个Collection方法都会返回一个新的Collection实例。<br> 常用操作：</p>
+<h5 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h5><pre><code>map方法遍历集合并传递每个值给给定回调。该回调可以修改数据项并返回，从而生成一个新的经过修改的集合：
+$collection = collect([1, 2, 3, 4, 5]);
+$multiplied = $collection-&gt;map(function ($item, $key) {
+    return $item * 2;
+});
+$multiplied-&gt;all();
+返回值： [2, 4, 6, 8, 10]
+</code></pre><h5 id="collapse"><a href="#collapse" class="headerlink" title="collapse()"></a>collapse()</h5><pre><code>collapse方法将一个多维数组集合收缩成一个一维数组：
+$collection = collect([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
+$collapsed = $collection-&gt;collapse();
+$collapsed-&gt;all();
+返回值： [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre><h5 id="count"><a href="#count" class="headerlink" title="count()"></a>count()</h5><pre><code>count方法返回集合中所有项的数目：
+$collection = collect([1, 2, 3, 4]);
+$collection-&gt;count();
+返回值： 4
+</code></pre><h5 id="diff"><a href="#diff" class="headerlink" title="diff()"></a>diff()</h5><pre><code>diff方法将集合和另一个集合或原生PHP数组作比较：
+$collection = collect([1, 2, 3, 4, 5]);
+$diff = $collection-&gt;diff([2, 4, 6, 8]);
+$diff-&gt;all();
+返回值： [1, 3, 5]
+</code></pre><p>  还有很多示例：例如each(),filter(),first(),forPage()<a href="http://blog.csdn.net/tang05709/article/details/51178023" target="_blank" rel="external">……</a><br>  <font color="red" face="黑体">有了这个php扩展类 让我们以后不用在写一大堆foreach了!是不是很爽!</font></p>
 
       
     </div>
@@ -355,7 +375,7 @@
       
         <div class="post-tags">
           
-            <a href="/next/tags/redis/" rel="tag"># redis</a>
+            <a href="/next/tags/php/" rel="tag"># php</a>
           
         </div>
       
@@ -368,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/16/php单元测试-契约测试/" rel="next" title="php单元测试 契约测试">
-                <i class="fa fa-chevron-left"></i> php单元测试 契约测试
+              <a href="/2017/06/23/php-闭包特性/" rel="next" title="php 闭包特性">
+                <i class="fa fa-chevron-left"></i> php 闭包特性
               </a>
             
           </div>
@@ -377,10 +397,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/19/jenkins-Sonar发布流水线/" rel="prev" title="jenkins+Sonar发布流水线">
-                jenkins+Sonar发布流水线 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -500,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#redis-多数据库"><span class="nav-number">1.</span> <span class="nav-text">redis 多数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis-事务"><span class="nav-number">2.</span> <span class="nav-text">redis 事务</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Collection扩展类"><span class="nav-number">1.</span> <span class="nav-text">Collection扩展类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#map"><span class="nav-number">1.1.</span> <span class="nav-text">map()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#collapse"><span class="nav-number">1.2.</span> <span class="nav-text">collapse()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#count"><span class="nav-number">1.3.</span> <span class="nav-text">count()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#diff"><span class="nav-number">1.4.</span> <span class="nav-text">diff()</span></a></li></ol></li></ol></div>
             
 
           </div>
