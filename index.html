@@ -253,6 +253,119 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/22/docker-容器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/img.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈康">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/22/docker-容器/" itemprop="url">docker 容器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-22T10:03:52+08:00">
+                2017-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h3><p> docker 三组件 分别是镜像（image）、容器（Container）、仓库（repository）<br> 安装一个项目环境流程从仓库拉取镜像到容器,最大的docker公开仓库是DockerHub，<br> 并且docker是开源的源代码放在git上,想了解的同学可以自己去github上搜docker即可。<br> 想学习docker的同学最起码要有linux管理经验,这样学起来方便点。<br> docker在windows，linux都可以安装 安装包在官网<a href="www.docker.com">www.docker.com</a>下载<br> docker优势：<br>    统一环境开发,节省服务器资源,低消耗：虚拟化本身带来的损耗需要尽量的低,<br>    (我们不可能在一台机器上开上百个虚拟机(但是我们可以开上百个容器)，虽然可以在资源隔离方面做的很好，但这种虚拟化本身带来的资源消耗太严重)<br> 命令：docker命令都是以docker开头的<br> docker command –help查看相关参数意义<br> docker run 创建docker容器( 查看本地是否有镜像，没有则去DockerHub下载,在run后面加上-d参数，则会创建一个守护式容器在后台运行)<br> docker run -i -t 镜像名字 /bin/bash创建一个容器<br> docker -i -t ubuntu /bin/bash，其中使用-t参数是指定一个交互是命令行，<br> 执行这个命令，如果本地有镜像，则用本地镜像创建一个容器，<br> 命令执行完毕后，会创建启动一个容器，并进入容器内部的shell中。在这个容器里面和普通的Linux操作完全一样。<br> docker ps -a 查看已经创建的容器<br> docker ps -s 查看已经启动的容器<br> docker start con_name 启动容器名为con_name的容器<br> docker stop con_name  停止容器名为con_name的容器<br> docker rm con_name    删除容器名为con_name的容器<br> docker rename old_name new_name 重命名一个容器<br> docker logs con_name 获取容器名为con_name的容器日志<br> docker inspect 查看容器的详细信息<br> docker top con_name 查看容器名为con_name的容器内部的进程<br> docker exec        可以用来在容器中运行一个进程</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/21/mysql-慢查询/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1281,120 +1394,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/15/laravel/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/img.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈康">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/15/laravel/" itemprop="url">laravel</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-15T17:44:12+08:00">
-                2017-06-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="laravel-打印sql"><a href="#laravel-打印sql" class="headerlink" title="laravel 打印sql"></a>laravel 打印sql</h3><p>DB::enableQueryLog();<br>$sql =”select * from user”;<br>print_r(DB::getQueryLog($sql));exit;</p>
-<h3 id="使用Tinker-调用-laravel"><a href="#使用Tinker-调用-laravel" class="headerlink" title="使用Tinker 调用 laravel"></a>使用Tinker 调用 laravel</h3><p>命令行输入Php Artisan Tinker 即可用<br>可以在里面测试一段小程序 看是否出错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    echo&quot;有没有出问题呢&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1444,7 +1443,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1457,7 +1456,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">Tags</span>
               
             </div>
