@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="权限," />
 
 
 
@@ -93,17 +93,21 @@
 
 
 
-<meta name="description" content="git常用命令 ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key git config –global user.name “Your Name”      你名 git config –global user.email “email@example.com”  你邮箱（随意） git clone ssh路径 连接远程（默认在桌面）">
-<meta name="keywords" content="git">
+<meta name="description" content="权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，下面说的就是RBAC。  1.基于资源的权限控制——ACL (资源就是，例如一张图片,一段视频都可以成为资源)   2.基于角色的权限控制——RBAC （角色像开发部门,运营部门等等）   3.引入”组“概">
+<meta name="keywords" content="权限">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git基本命令">
-<meta property="og:url" content="http://yiguitao.com/2017/06/15/git上传流程命令/index.html">
+<meta property="og:title" content="ACL   RBAC权限管理">
+<meta property="og:url" content="http://yiguitao.com/2017/07/10/acl-rbac权限管理/index.html">
 <meta property="og:site_name" content="陈康">
-<meta property="og:description" content="git常用命令 ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key git config –global user.name “Your Name”      你名 git config –global user.email “email@example.com”  你邮箱（随意） git clone ssh路径 连接远程（默认在桌面）">
-<meta property="og:updated_time" content="2017-06-20T07:09:37.550Z">
+<meta property="og:description" content="权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，下面说的就是RBAC。  1.基于资源的权限控制——ACL (资源就是，例如一张图片,一段视频都可以成为资源)   2.基于角色的权限控制——RBAC （角色像开发部门,运营部门等等）   3.引入”组“概">
+<meta property="og:image" content="http://yiguitao.com/2017/07/10/acl-rbac权限管理/images/2.png">
+<meta property="og:image" content="http://yiguitao.com/2017/07/10/acl-rbac权限管理/images/3.png">
+<meta property="og:image" content="http://yiguitao.com/2017/07/10/acl-rbac权限管理/images/4.png">
+<meta property="og:updated_time" content="2017-07-10T02:47:50.896Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git基本命令">
-<meta name="twitter:description" content="git常用命令 ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key git config –global user.name “Your Name”      你名 git config –global user.email “email@example.com”  你邮箱（随意） git clone ssh路径 连接远程（默认在桌面）">
+<meta name="twitter:title" content="ACL   RBAC权限管理">
+<meta name="twitter:description" content="权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，下面说的就是RBAC。  1.基于资源的权限控制——ACL (资源就是，例如一张图片,一段视频都可以成为资源)   2.基于角色的权限控制——RBAC （角色像开发部门,运营部门等等）   3.引入”组“概">
+<meta name="twitter:image" content="http://yiguitao.com/2017/07/10/acl-rbac权限管理/images/2.png">
 
 
 
@@ -131,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yiguitao.com/2017/06/15/git上传流程命令/"/>
+  <link rel="canonical" href="http://yiguitao.com/2017/07/10/acl-rbac权限管理/"/>
 
 
 
 
 
-  <title>git基本命令 | 陈康</title>
+  <title>ACL   RBAC权限管理 | 陈康</title>
   
 
 
@@ -255,8 +259,8 @@
   
   
 
-  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/15/git上传流程命令/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/07/10/acl-rbac权限管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
@@ -273,7 +277,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git基本命令</h1>
+          <h1 class="post-title" itemprop="name headline">ACL   RBAC权限管理</h1>
         
 
         <div class="post-meta">
@@ -285,8 +289,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-15T13:36:52+08:00">
-                2017-06-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T10:20:22+08:00">
+                2017-07-10
               </time>
             
 
@@ -297,6 +301,8 @@
 
           
 
+          
+            
           
 
           
@@ -319,7 +325,8 @@
       
 
       
-        <h3 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h3><p> ssh-keygen -t rsa -C “youremail@example.com”  创建SSH Key<br> git config –global user.name “Your Name”      你名<br> git config –global user.email “email@example.com”  你邮箱（随意）<br> git clone ssh路径 连接远程（默认在桌面）<br> git流程<br> git status  查看状态<br> git add .文件名  准备上传的文件<br> git reset 文件名  撤销准备上传的文件<br> git commit -m ‘add 文件名’  上传文件到本地仓库<br> git commit -am ‘edit b.php’<br> git log  查看日志<br> git push origin master:master  上传文件到远程仓库<br> git push origin 本地分支名：远程仓库分支名  把整个分支上传到远程分支<br> git pull  下载文件到本地仓库<br> git diff  查看冲突</p>
+        <h4 id="权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，"><a href="#权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，" class="headerlink" title="权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，"></a>权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，</h4><pre><code>下面说的就是RBAC。
+</code></pre><p> 1.基于资源的权限控制——ACL (资源就是，例如一张图片,一段视频都可以成为资源)<br>  <img src="images/2.png" alt="RBAC"><br> 2.基于角色的权限控制——RBAC （角色像开发部门,运营部门等等）<br>  <img src="images/3.png" alt="RBAC"><br> 3.引入”组“概念的权限控制——RBAC （这个好理解 和上学时候分小组一个概念）<br>  <img src="images/4.png" alt="RBAC"><br>   在上边的分析中，得出了一种包含用户、角色、资源、组等几个主体的权限管理，它们之间的关联都是多对多的(一个用户可以在多个组，一个组可以有多个用户)<br>      RBAC权限管理模型在加入”组“概念后，在实现继承功能的基础上，更加灵活的适应了需求的变更。<br>  <font color="red" face="黑体">它主要的配置为：用户-角色配置、用户-用户组配置，角色-资源配置，用户组-资源配置，<br>      这些配置对应到数据库中就是两个主表之间的第三张表，里边存储的是用户操作的记录，服务于主表以供查询。</font><br>      RBAC设计表：用户表，角色表，权限表，用户角色表，角色权限表。(个人设计，有更好的可以自己设计)</p>
 
       
     </div>
@@ -349,7 +356,7 @@
       
         <div class="post-tags">
           
-            <a href="/next/tags/git/" rel="tag"># git</a>
+            <a href="/next/tags/权限/" rel="tag"># 权限</a>
           
         </div>
       
@@ -362,15 +369,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/06/29/apache-ab压力测试/" rel="next" title="apache ab压力测试">
+                <i class="fa fa-chevron-left"></i> apache ab压力测试
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/15/laravel/" rel="prev" title="laravel">
-                laravel <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -394,6 +401,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -486,7 +497,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#git常用命令"><span class="nav-number">1.</span> <span class="nav-text">git常用命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，"><span class="nav-number">1.</span> <span class="nav-text">权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，</span></a></li></ol></div>
             
 
           </div>

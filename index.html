@@ -253,6 +253,120 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/07/10/acl-rbac权限管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/img.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈康">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/10/acl-rbac权限管理/" itemprop="url">ACL   RBAC权限管理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-10T10:20:22+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，"><a href="#权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，" class="headerlink" title="权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，"></a>权限管理的设计理念有很多，像ABAC（基于属性的访问控制）、ACL（基于资源的访问控制）、RBAC（基于资源的访问控制）、GBAC（基于组的访问控制）等等，它们各有利弊，现在最常用的是RBAC，</h4><pre><code>下面说的就是RBAC。
+</code></pre><p> 1.基于资源的权限控制——ACL (资源就是，例如一张图片,一段视频都可以成为资源)<br>  <img src="images/2.png" alt="RBAC"><br> 2.基于角色的权限控制——RBAC （角色像开发部门,运营部门等等）<br>  <img src="images/3.png" alt="RBAC"><br> 3.引入”组“概念的权限控制——RBAC （这个好理解 和上学时候分小组一个概念）<br>  <img src="images/4.png" alt="RBAC"><br>   在上边的分析中，得出了一种包含用户、角色、资源、组等几个主体的权限管理，它们之间的关联都是多对多的(一个用户可以在多个组，一个组可以有多个用户)<br>      RBAC权限管理模型在加入”组“概念后，在实现继承功能的基础上，更加灵活的适应了需求的变更。<br>  <font color="red" face="黑体">它主要的配置为：用户-角色配置、用户-用户组配置，角色-资源配置，用户组-资源配置，<br>      这些配置对应到数据库中就是两个主表之间的第三张表，里边存储的是用户操作的记录，服务于主表以供查询。</font><br>      RBAC设计表：用户表，角色表，权限表，用户角色表，角色权限表。(个人设计，有更好的可以自己设计)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/29/apache-ab压力测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1301,123 +1415,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/19/redis-多数据库/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/img.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈康">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/19/redis-多数据库/" itemprop="url">redis</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-19T10:33:50+08:00">
-                2017-06-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="redis-多数据库"><a href="#redis-多数据库" class="headerlink" title="redis 多数据库"></a>redis 多数据库</h2><p> 目的： 让程序数据彼此分开同时又存储在相同的实例<br> 理解： redis下，数据库是由一个整数索引标识，而不是由一个数据库名称。默认情况下，一个客户端连接到数据库0<br>        一个redis实例下默认有16个数据库，默认从0开始,每个数据库都有属于自己的空间，不必担心之间的key冲突。<br> 操作： 可以随意操作 切还库<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">redis&gt; select 2</div></pre></td></tr></table></figure></p>
-<pre><code>用move 命令 可以将键值 从1库迁入 2库
-</code></pre><p>扩展： 一个redis默认是16个数据库，也可以配置更多，当然16个库足够用了,<br>       配置如下：<br>       修改redis.conf下的databases指令：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">databases 64</div></pre></td></tr></table></figure></p>
-<h2 id="redis-事务"><a href="#redis-事务" class="headerlink" title="redis 事务"></a>redis 事务</h2><p>  事务表示的是一组动作，这组动作要么全部执行，要么全部不执行.<br>  redis 需要用到两个命令 MULTI（开启事务） exec (执行事务) DISCARD（取消事务）<br> 执行事务：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">redis&gt; MULTI</div><div class="line">OK</div><div class="line">redis&gt; SET a &quot;hello&quot;</div><div class="line">QUEUED</div><div class="line">redis&gt; DISCARD</div></pre></td></tr></table></figure></p>
-<p> 取消事务：<br>       <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">redis&gt; MULTI</div><div class="line">OK</div><div class="line">redis&gt; SET a &quot;hello&quot;</div><div class="line">QUEUED</div><div class="line">redis&gt; DISCARD</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1467,7 +1464,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1480,7 +1477,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">Tags</span>
               
             </div>
