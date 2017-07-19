@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="Collection扩展类 作用：对数组的处理扩展   12345$collection = collect([&amp;apos;chenkang&amp;apos;, &amp;apos;yangshuo&amp;apos;, null])-&amp;gt;map(function ($name) &amp;#123;                  return strtoupper($name);              &amp;#125">
+<meta name="description" content="Collection扩展类  SPL 扩展类 作用：对数组的处理扩展   12345$collection = collect([&amp;apos;chenkang&amp;apos;, &amp;apos;yangshuo&amp;apos;, null])-&amp;gt;map(function ($name) &amp;#123;                  return strtoupper($name);">
 <meta name="keywords" content="php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php Collection扩展类">
 <meta property="og:url" content="http://yiguitao.com/2017/06/23/php-Collection扩展类/index.html">
 <meta property="og:site_name" content="陈康">
-<meta property="og:description" content="Collection扩展类 作用：对数组的处理扩展   12345$collection = collect([&amp;apos;chenkang&amp;apos;, &amp;apos;yangshuo&amp;apos;, null])-&amp;gt;map(function ($name) &amp;#123;                  return strtoupper($name);              &amp;#125">
-<meta property="og:updated_time" content="2017-06-23T06:16:05.401Z">
+<meta property="og:description" content="Collection扩展类  SPL 扩展类 作用：对数组的处理扩展   12345$collection = collect([&amp;apos;chenkang&amp;apos;, &amp;apos;yangshuo&amp;apos;, null])-&amp;gt;map(function ($name) &amp;#123;                  return strtoupper($name);">
+<meta property="og:updated_time" content="2017-07-19T06:19:26.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php Collection扩展类">
-<meta name="twitter:description" content="Collection扩展类 作用：对数组的处理扩展   12345$collection = collect([&amp;apos;chenkang&amp;apos;, &amp;apos;yangshuo&amp;apos;, null])-&amp;gt;map(function ($name) &amp;#123;                  return strtoupper($name);              &amp;#125">
+<meta name="twitter:description" content="Collection扩展类  SPL 扩展类 作用：对数组的处理扩展   12345$collection = collect([&amp;apos;chenkang&amp;apos;, &amp;apos;yangshuo&amp;apos;, null])-&amp;gt;map(function ($name) &amp;#123;                  return strtoupper($name);">
 
 
 
@@ -321,7 +321,7 @@
       
 
       
-        <h4 id="Collection扩展类"><a href="#Collection扩展类" class="headerlink" title="Collection扩展类"></a>Collection扩展类</h4> <font color="red" face="黑体">作用：对数组的处理扩展</font>
+        <h4 id="Collection扩展类-SPL-扩展类"><a href="#Collection扩展类-SPL-扩展类" class="headerlink" title="Collection扩展类  SPL 扩展类"></a>Collection扩展类  <a href="http://www.ruanyifeng.com/blog/2008/07/php_spl_notes.html" target="_blank" rel="external">SPL 扩展类</a></h4> <font color="red" face="黑体">作用：对数组的处理扩展</font>
 
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$collection = collect([&apos;chenkang&apos;, &apos;yangshuo&apos;, null])-&gt;map(function ($name) &#123;</div><div class="line">                  return strtoupper($name);</div><div class="line">              &#125;)-&gt;reject(function ($name) &#123;</div><div class="line">                  return empty($name);</div><div class="line">              &#125;);</div></pre></td></tr></table></figure>
 <p> Collection类允许你使用方法链对底层数组执行匹配和减少操作，通常，每个Collection方法都会返回一个新的Collection实例。<br> 常用操作：</p>
@@ -517,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Collection扩展类"><span class="nav-number">1.</span> <span class="nav-text">Collection扩展类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#map"><span class="nav-number">1.1.</span> <span class="nav-text">map()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#collapse"><span class="nav-number">1.2.</span> <span class="nav-text">collapse()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#count"><span class="nav-number">1.3.</span> <span class="nav-text">count()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#diff"><span class="nav-number">1.4.</span> <span class="nav-text">diff()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Collection扩展类-SPL-扩展类"><span class="nav-number">1.</span> <span class="nav-text">Collection扩展类  SPL 扩展类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#map"><span class="nav-number">1.1.</span> <span class="nav-text">map()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#collapse"><span class="nav-number">1.2.</span> <span class="nav-text">collapse()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#count"><span class="nav-number">1.3.</span> <span class="nav-text">count()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#diff"><span class="nav-number">1.4.</span> <span class="nav-text">diff()</span></a></li></ol></li></ol></div>
             
 
           </div>

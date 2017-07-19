@@ -788,7 +788,7 @@
 
       
         
-          <h4 id="Collection扩展类"><a href="#Collection扩展类" class="headerlink" title="Collection扩展类"></a>Collection扩展类</h4> <font color="red" face="黑体">作用：对数组的处理扩展</font>
+          <h4 id="Collection扩展类-SPL-扩展类"><a href="#Collection扩展类-SPL-扩展类" class="headerlink" title="Collection扩展类  SPL 扩展类"></a>Collection扩展类  <a href="http://www.ruanyifeng.com/blog/2008/07/php_spl_notes.html" target="_blank" rel="external">SPL 扩展类</a></h4> <font color="red" face="黑体">作用：对数组的处理扩展</font>
 
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$collection = collect([&apos;chenkang&apos;, &apos;yangshuo&apos;, null])-&gt;map(function ($name) &#123;</div><div class="line">                  return strtoupper($name);</div><div class="line">              &#125;)-&gt;reject(function ($name) &#123;</div><div class="line">                  return empty($name);</div><div class="line">              &#125;);</div></pre></td></tr></table></figure>
 <p> Collection类允许你使用方法链对底层数组执行匹配和减少操作，通常，每个Collection方法都会返回一个新的Collection实例。<br> 常用操作：</p>
