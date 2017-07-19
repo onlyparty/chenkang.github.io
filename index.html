@@ -253,6 +253,124 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/07/19/如何记录MySQL执行过的SQL语句/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/img.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈康">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/19/如何记录MySQL执行过的SQL语句/" itemprop="url">如何记录MySQL执行过的SQL语句?</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-19T13:26:53+08:00">
+                2017-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>很多时候，我们需要知道 MySQL 执行过哪些 SQL 语句，比如 MySQL 被注入后，需要知道造成什么伤害等等。
+只要有 SQL 语句的记录，就能知道情况并作出对策。服务器是可以开启 MySQL 的 SQL 语句记录功能，
+从而就能间接地检测到客户端程序的行为。
+</code></pre><p>开启方法很简单：<br>      编辑/etc/my.cnf文件，在[mysqld]节下面添加：log=/var/lib/mysql/sql_row.log行（日志的路径自己根据需要定义）。</p>
+<p><font color="red" face="黑体"> 修改完毕后，记得重启 MySQL：</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">service mysql restart</div><div class="line"># 或者</div><div class="line">/etc/init.d/mysqld stop</div><div class="line">/etc/init.d/mysqld start</div></pre></td></tr></table></figure></p>
+<p>现在你去 /var/lib/mysql/ 路径下的 sql_row.log 文件应该是能够看到 MySQL 什么时候执行了哪些程序了</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/07/10/acl-rbac权限管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1295,125 +1413,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yiguitao.com/2017/06/19/jenkins-Sonar发布流水线/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="陈康(探讨技术加微信：ckwahaha)">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/img.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈康">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/19/jenkins-Sonar发布流水线/" itemprop="url">jenkins+Sonar发布流水线</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-19T15:34:11+08:00">
-                2017-06-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="Sonar"><a href="#Sonar" class="headerlink" title="Sonar"></a>Sonar</h3><p>  开发语言:Java Ruby <a href="https://github.com/SonarSource/sonarqube" target="_blank" rel="external">查看源码»</a><br>  操作系统:跨平台<br>  简介：Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。<br>  Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持多种语言。<br>  <a href="https://www.ibm.com/developerworks/cn/java/j-lo-sonar/" target="_blank" rel="external">点击查看Sonar安装和使用</a></p>
-<h3 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h3><p>  1,安装：从官网下载安装文件后，直接运行即可;<br>  2,变更支持：Jenkins能从代码仓库（Svn/Git）中获取并产生代码更新列表并显示到流水线信息中;<br>  3,JUnit/TestNG图表等形式提供详细的测试报表功能;<br>  4,Jenkins支持分布式构建;<br>  5,Jenkins 还支持第三方插件(所以可以和Sonar一块使用);</p>
-<h4 id="部署Jenkins服务"><a href="#部署Jenkins服务" class="headerlink" title="部署Jenkins服务"></a>部署Jenkins服务</h4><p>  安装环境介绍<br>  安装 Jenkins<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/19/jenkins-Sonar发布流水线/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1463,7 +1462,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
